@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog Dashboard</title>
+  <link rel="stylesheet" href="../css/dashboard.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+</head>
+<body>
+  <!-- HEADER -->
+  <header class="dashboard-header">
+    <h1><i class="fas fa-blog"></i>Dashboard</h1>
+    <div id="currentUser"></div>
+    <nav>
+      <a href="#">Home</a>
+      <a href="#">Posts</a>
+      <a href="#">Logout</a>
+    </nav>
+  </header>
+
+  <!-- MAIN CONTENT -->
+  <main class="dashboard-main">
+    <div class="post-card">
+      <h2>Create a New Post</h2>
+      <textarea id="postContent" placeholder="Write your blog post here..."></textarea>
+      <button onclick="submitPost()">Publish</button>
+    </div>
+
+    
+
+    
+  </main>
+  <section >
+        <div id="timeLine"> </div>
+        
+  </section>
+  
+</body>
+</html>
+<script src="../js/dashboard.js">
+
+</script>

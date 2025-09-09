@@ -8,7 +8,7 @@ let tablebody =document.getElementById('tbody')
 function displayUser(params) {
     tablebody.innerHTML = ''
     for (let index = 0; index < userDatabase.length; index++) {
-        tablebody += `<tr>
+        tablebody.innerHTML += `<tr>
           <td>${index +1}</td>
           <td>${userDatabase[index].username}</td>
           <td>${userDatabase[index].email}</td>
@@ -38,7 +38,7 @@ function signUp() {
 
     // }
 
-    if (myUsername === '' || myEmail === '' || myPassword === '' || myConfirm === '') {
+    if (!myUsername  || !myEmail  || !myPassword || !myConfirm) {
         alert('all fields are mandatory')
         return
 
@@ -68,6 +68,7 @@ function signUp() {
 
     if (isUserExistingObj) {
         alert('user already exists, proceeed to sign-in')
+        location.href = './pages/login.html'
         return
     }
 
