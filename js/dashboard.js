@@ -89,11 +89,11 @@ function edit(params) {
     let newBlog = blogDatabase.splice(params, 1, `${prompter}`)
     displayBlog()
     console.log(blogDatabase);
+     localStorage.setItem('blogDatabaseMemory', JSON.stringify(blogDatabase))
     
    }
     
 }
-
 
 
 

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <label for="search">search</label>
+    <input type="text" id="search">
+    <div id="results"></div>
+    <script>
+        const search = document.getElementById("search");
+        const results = document.getElementById("results");
+        let items = ['Macbook', 'hp', 'Iphone', 'Samsung', 'Blackberry', 'itel', 'solar', 'panels', 'infinix', 'infiniti', 'burberry', 'fendi', 'charger', 'changer', 'Iphone-12', 'Iphone-120proMax', 'blueberry', 'bread', 'beans']
+
+        function displayItem(items) {
+            workings = items.map((item, i, arr) => `<li>${item}</li>`)
+            results.innerHTML  = workings.join('')
+        }
+        displayItem(items)
+
+
+
+        search.oninput = function () {
+            let inputWord = this.value.toLowerCase()
+            let filteredWord = items.filter((a, b, c) => a.toLowerCase().includes(inputWord))
+            if (filteredWord) {
+                displayItem(filteredWord)
+            }else{
+               results.innerHTML = 'we do not have this product available' 
+            }
+
+        }
+
+    </script>
+</body>
+
+</html>

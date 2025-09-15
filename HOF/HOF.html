@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // array.forEach(element => {
+            
+        // });
+
+        // arr.find(()=>{
+
+        // })
+
+        let values = [6, '7', 7, undefined, null, [4,5], {name: 'doc'}]
+
+        let foundString7 = values.find((arrObj, i, arr)=>{
+        
+            return typeof arrObj ==="string"
+        })
+        console.log(foundString7);
+        // array.isArr(()=>{
+
+        // })
+        for (const element of values) {
+            console.log(element);
+            
+        }
+
+        let nice = values.forEach((a,b,c)=>{
+            console.log(a,b,c);
+            return 'hello'
+            
+        })
+
+          let userArr = [
+        {
+            name: 'habib',
+            age: 45,
+            sex: 'male'
+        },
+        {
+            name: 'testimony',
+            age: 16,
+            sex: 'male'
+        },
+        {
+            name: 'tolu',
+            age: 36,
+            sex: 'female'
+        },
+         {
+            name: 'tolani',
+            age: 45,
+            sex: 'female'
+        }
+        
+
+    ]
+
+    let mappedArr = values.map((a,b,c)=>{
+        console.log( a + ' ' + 'yes');
+        return a + b
+    })
+    let foundObj = userArr.find((userObj, i, myarr) => {
+        console.log(i);
+        
+        return userObj.age === 45
+    })
+
+    console.log(foundObj);
+
+
+    
+
+        
+    // setInterval()
+    // values.endsWith()
+
+    const scores = [
+  { name: 'Asabeneh', score: 95 },
+   { name: 'Lidiya', score: 98 },
+  { name: 'Mathias', score: 80 },
+  { name: 'Elias', score: 50 },
+  { name: 'Martha', score: 85 },
+  { name: 'John', score: 100 },
+]
+
+const scoresGreaterEighty = scores.filter((score) => score.score > 80)
+console.log(scoresGreaterEighty)
+
+        values.filter()
+    </script>
+</body>
+</html>
