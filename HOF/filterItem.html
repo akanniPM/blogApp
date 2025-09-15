@@ -9,7 +9,7 @@
 
 <body>
     <label for="search">search</label>
-    <input type="text" id="search">
+    <input type="search" id="search">
     <div id="results"></div>
     <script>
         const search = document.getElementById("search");
@@ -27,9 +27,11 @@
         search.oninput = function () {
             let inputWord = this.value.toLowerCase()
             let filteredWord = items.filter((a, b, c) => a.toLowerCase().includes(inputWord))
-            if (filteredWord) {
+            if (filteredWord.length > 0) {
                 displayItem(filteredWord)
-            }else{
+                return
+            }
+            else{
                results.innerHTML = 'we do not have this product available' 
             }
 
@@ -37,5 +39,5 @@
 
     </script>
 </body>
-
+    <!-- .join turns array to string -->
 </html>
