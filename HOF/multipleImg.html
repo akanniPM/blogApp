@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="file"  id="multipleImg" onchange="imgPick()">
+    <img id="ImgOutput" alt="">
+    <script>
+        let file = document.getElementById('multipleImg')
+            console.log(file);
+        function imgPick() {
+            let file = document.getElementById('multipleImg').files;
+            console.log(file)
+            let fileStorage = []
+            fileStorage.push(file)
+            console.log(fileStorage);
+            
+
+            
+        }
+    </script>
+</body>
+</html>

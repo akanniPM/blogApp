@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+       body {
+            background: linear-gradient(to right, rgb(180, 86, 239), rgb(230, 210, 100));
+            /* display: grid; */
+            justify-content: space-around;
+            align-items: center;
+            padding: 10px 0px;
+
+        }
+        #container{
+            width: 70%;
+            margin-left: auto;
+            margin-right: auto;
+            justify-content: space-around;
+            display: flex;
+             background: linear-gradient(to right, rgb(45, 233, 8), rgb(61, 92, 104));
+             margin-top: 10px;
+           
+        }
+        #prev, #next{
+            height: 30px;
+            background-color: brown;
+            color: white;
+            width: 50px;
+            margin-top: auto;
+            margin-bottom: auto;
+            border-radius: 30px;
+            border: none;
+            /* padding: 10px; */
+        }
+        #displayImg{
+            border: 1px solid rgb(86, 244, 46);
+            margin :5px
+        }
+        #image{
+             object-fit: cover;
+            /* object-position: center; */
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+<body>
+    <input type="file" onchange="pickImg()" id="imgFile">
+    <div id="container">
+
+        <button id="prev" >prev</button>
+        <div id="displayImg" style="width: 200px; height: 350px;">
+
+        </div>
+        <button id="next">next</button>
+        
+    </div>
+    <script>
+
+        let imgHolder = []
+        let currentImg = null
+        let carouselImg = 0
+        let next = document.getElementById('next')
+        let prev = document.getElementById('prev')
+        let displayImg = document.getElementById('displayImg')
+        function pickImg() {
+            let file   = document.getElementById("imgFile").files[0]
+            if (!file) {
+                alert('please attach a file')
+                return
+            }
+
+            if (file) {
+                let reader = new FileReader()
+                reader.readAsDataURL(file)
+                reader.addEventListener('load', ev =>{
+                    currentImg = ev.target.result
+                    imgHolder.push(currentImg)
+                    console.log(imgHolder);
+                    
+
+                })
+                showImg()
+            }
+            
+        }
+        function showImg(params) {
+            displayImg.innerHTML = `<img src="${imgHolder[carouselImg]}" alt="" id='image'>`
+        }
+
+        prev.addEventListener('click', ev=>{
+            carouselImg--
+            if (carouselImg < 0) {
+                carouselImg = imgHolder.length-1
+                showImg(carouselImg)
+            }else{
+                showImg(carouselImg)
+            }
+
+        })
+
+        next.addEventListener('click', ev=>{
+            carouselImg++
+          if (carouselImg >= imgHolder.length) {
+                carouselImg = 0
+                showImg(carouselImg)
+            }else{
+                showImg(carouselImg)
+            }
+        })
+        showImg()
+
+    </script>
+</body>
+</html>

@@ -25,6 +25,8 @@
     <div class="post-card">
       <h2>Create a New Post</h2>
       <textarea id="postContent" placeholder="Write your blog post here..."></textarea>
+      <input type="file" id="imageInput" onchange="imgPicker()">
+      <img id="imgOutput" alt="" width="300px" height="350px">
       <button onclick="submitPost()">Publish</button>
     </div>
 

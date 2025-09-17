@@ -1,25 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
     <script>
         // array.forEach(element => {
-            
+
         // });
 
         // arr.find(()=>{
 
         // })
 
-        let values = [6, '7', 7, undefined, null, [4,5], {name: 'doc'}]
+        let values = [6, '7', 7, undefined, null, [4, 5], { name: 'doc' }]
 
-        let foundString7 = values.find((arrObj, i, arr)=>{
-        
-            return typeof arrObj ==="string"
+        let foundString7 = values.find((arrObj, i, arr) => {
+
+            return typeof arrObj === "string"
         })
         console.log(foundString7);
         // array.isArr(()=>{
@@ -27,75 +29,79 @@
         // })
         for (const element of values) {
             console.log(element);
-            
+
         }
 
-        let nice = values.forEach((a,b,c)=>{
-            console.log(a,b,c);
+        let nice = values.forEach((a, b, c) => {
+            console.log(a, b, c);
             return 'hello'
-            
+
         })
 
-          let userArr = [
-        {
-            name: 'habib',
-            age: 45,
-            sex: 'male'
-        },
-        {
-            name: 'testimony',
-            age: 16,
-            sex: 'male'
-        },
-        {
-            name: 'tolu',
-            age: 36,
-            sex: 'female'
-        },
-         {
-            name: 'tolani',
-            age: 45,
-            sex: 'female'
-        }
-        
-
-    ]
-
-    let mappedArr = values.map((a,b,c)=>{
-        console.log( a + ' ' + 'yes');
-        return a + b
-    })
-    let foundObj = userArr.find((userObj, i, myarr) => {
-        console.log(i);
-        
-        return userObj.age === 45
-    })
-
-    console.log(foundObj);
+        let userArr = [
+            {
+                name: 'habib',
+                age: 45,
+                sex: 'male'
+            },
+            {
+                name: 'testimony',
+                age: 16,
+                sex: 'male'
+            },
+            {
+                name: 'tolu',
+                age: 36,
+                sex: 'female'
+            },
+            {
+                name: 'tolani',
+                age: 45,
+                sex: 'female'
+            }
 
 
-    
+        ]
 
-        
-    // setInterval()
-    // values.endsWith()
+        let mappedArr = values.map((a, b, c) => {
+            // console.log(a + ' ' + 'yes');
+            return a + b
+        })
+        let foundObj = userArr.find((userObj, i, myarr) => {
+            console.log(i);
 
-    const scores = [
-  { name: 'Asabeneh', score: 95 },
-   { name: 'Lidiya', score: 98 },
-  { name: 'Mathias', score: 80 },
-  { name: 'Elias', score: 50 },
-  { name: 'Martha', score: 85 },
-  { name: 'John', score: 100 },
-]
+            return userObj.age === 45
+        })
 
-const scoresGreaterEighty = scores.filter((score) => score.score > 80)
-console.log(scoresGreaterEighty)
+        console.log(foundObj);
 
-        values.filter()
+
+
+
+
+        // setInterval()
+        // values.endsWith()
+
+        const scores = [
+            { name: 'Asabeneh', score: 95 },
+            { name: 'Lidiya', score: 98 },
+            { name: 'Mathias', score: 80 },
+            { name: 'Elias', score: 50 },
+            { name: 'Martha', score: 85 },
+            { name: 'John', score: 100 },
+        ]
+
+        const scoresGreaterEighty = scores.filter((score) => score.score > 80)
+        console.log(scoresGreaterEighty)
+        let value = [1, 3, 5, 5, 4, 2, 2, 5, 65, 34, 3, 23, 42, 45, 6, 7, 7876, 65, 45, 34]
+
+        let sum = value.reduce((prev, curr, i, arr) => {return prev + curr }, 0)
+
+        console.log(sum);
 
         // work in various input types
         // learn about events ... onchange, oninput
     </script>
 </body>
+
 </html>
